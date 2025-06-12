@@ -1,0 +1,26 @@
+<div class="p-6">
+  <h2 class="text-xl font-semibold mb-4">Lista de Usuarios</h2>
+  <table class="min-w-full bg-white rounded shadow">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="px-4 py-2">Nombre</th>
+        <th class="px-4 py-2">Matrícula</th>
+        <th class="px-4 py-2">Tipo</th>
+        <th class="px-4 py-2">CURP</th>
+        <th class="px-4 py-2">RFC</th>
+        <th class="px-4 py-2">Asignacion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios" class="hover:bg-gray-100">
+        <td class="px-4 py-2">{{ usuario.nombre }}</td>
+        <td class="px-4 py-2">{{ usuario.matricula }}</td>
+        <td class="px-4 py-2">{{ usuario.tipo }}</td>
+        <td class="px-4 py-2">{{ usuario.curp }}</td>
+        <td class="px-4 py-2">{{ usuario.rfc }}</td>
+        <th  class="px-3 py-2">{{usuario.asignacion}}</th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

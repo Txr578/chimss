@@ -1,0 +1,13 @@
+<table *ngIf="datos.length">
+    <thead>
+      <tr>
+        <th *ngFor="let key of datos[0] | keyvalue">{{ key.key }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fila of datos">
+        <td *ngFor="let valor of fila | keyvalue">{{ valor.value }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
