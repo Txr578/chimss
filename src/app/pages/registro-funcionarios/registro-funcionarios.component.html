@@ -1,13 +1,21 @@
-<table *ngIf="datos.length">
+@if (datos.length) {
+  <table>
     <thead>
       <tr>
-        <th *ngFor="let key of datos[0] | keyvalue">{{ key.key }}</th>
+        @for (key of datos[0] | keyvalue; track key) {
+          <th>{{ key.key }}</th>
+        }
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let fila of datos">
-        <td *ngFor="let valor of fila | keyvalue">{{ valor.value }}</td>
-      </tr>
+      @for (fila of datos; track fila) {
+        <tr>
+          @for (valor of fila | keyvalue; track valor) {
+            <td>{{ valor.value }}</td>
+          }
+        </tr>
+      }
     </tbody>
   </table>
-  
+}
+

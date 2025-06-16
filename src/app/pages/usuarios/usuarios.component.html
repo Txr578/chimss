@@ -12,14 +12,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let usuario of usuarios" class="hover:bg-gray-100">
-        <td class="px-4 py-2">{{ usuario.nombre }}</td>
-        <td class="px-4 py-2">{{ usuario.matricula }}</td>
-        <td class="px-4 py-2">{{ usuario.tipo }}</td>
-        <td class="px-4 py-2">{{ usuario.curp }}</td>
-        <td class="px-4 py-2">{{ usuario.rfc }}</td>
-        <th  class="px-3 py-2">{{usuario.asignacion}}</th>
-      </tr>
+      @for (usuario of usuarios; track usuario) {
+        <tr class="hover:bg-gray-100">
+          <td class="px-4 py-2">{{ usuario.nombre }}</td>
+          <td class="px-4 py-2">{{ usuario.matricula }}</td>
+          <td class="px-4 py-2">{{ usuario.tipo }}</td>
+          <td class="px-4 py-2">{{ usuario.curp }}</td>
+          <td class="px-4 py-2">{{ usuario.rfc }}</td>
+          <th  class="px-3 py-2">{{usuario.asignacion}}</th>
+        </tr>
+      }
     </tbody>
   </table>
 </div>

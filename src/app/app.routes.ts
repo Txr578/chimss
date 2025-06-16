@@ -40,7 +40,7 @@ export const routes: Routes = [
         {
           path: 'traslados',
           loadComponent: () =>
-            import('./pages/traslados/traslados.component').then(m => m.TrasladosComponent) 
+            import('./pages/traslados/traslados.component').then(m => m.TrasladosComponent)
         },
         {
           path: 'configuracion',
@@ -95,5 +95,5 @@ export const routes: Routes = [
         }
       ]
     },
-    { path: '**', redirectTo: 'login' }
+    { path: '**', redirectTo: 'login', pathMatch: 'full'  }
   ];
