@@ -3,132 +3,130 @@
 
   <!-- Botones para cambiar sección -->
   <div class="flex gap-4 mb-6">
-    <button (click)="cambiarSeccion('usuarios')" 
-      [ngClass]="{'bg-blue-200 text-white': seccionActiva === 'usuarios', 'bg-gray-50': seccionActiva !== 'usuarios'}" 
+    <button (click)="cambiarSeccion('usuarios')"
+      [ngClass]="{'bg-blue-200 text-white': seccionActiva === 'usuarios', 'bg-gray-50': seccionActiva !== 'usuarios'}"
       class="px-4 py-2 rounded border">
       Usuarios
     </button>
 
-    <button (click)="cambiarSeccion('vehiculos')" 
-      [ngClass]="{'bg-blue-200 text-white': seccionActiva === 'vehiculos', 'bg-gray-50': seccionActiva !== 'vehiculos'}" 
+    <button (click)="cambiarSeccion('vehiculos')"
+      [ngClass]="{'bg-blue-200 text-white': seccionActiva === 'vehiculos', 'bg-gray-50': seccionActiva !== 'vehiculos'}"
       class="px-4 py-2 rounded border">
       Vehículos
     </button>
 
-   <!-- <button (click)="cambiarSeccion('comprobacion')" 
-    [ngClass]="{'bg-blue-200 text-white': seccionActiva === 'comprobacion', 'bg-gray-50': seccionActiva !== 'comprobacion'}" 
+    <!-- <button (click)="cambiarSeccion('comprobacion')"
+    [ngClass]="{'bg-blue-200 text-white': seccionActiva === 'comprobacion', 'bg-gray-50': seccionActiva !== 'comprobacion'}"
     class="px-4 py-2 rounded border">
     Comprobación
   </button>
 
-  <button (click)="cambiarSeccion('informecomision')" 
-    [ngClass]="{'bg-blue-200 text-white': seccionActiva === 'informecomision', 'bg-gray-50': seccionActiva !== 'informecomision'}" 
+  <button (click)="cambiarSeccion('informecomision')"
+    [ngClass]="{'bg-blue-200 text-white': seccionActiva === 'informecomision', 'bg-gray-50': seccionActiva !== 'informecomision'}"
     class="px-4 py-2 rounded border">
-    Informe Comisión 
+    Informe Comisión
   </button>
 
-  <button (click)="cambiarSeccion('registro-funcionarios')" 
-    [ngClass]="{'bg-blue-200 text-white': seccionActiva === 'registro-funcionarios', 'bg-gray-50': seccionActiva !== 'registro-funcionarios'}" 
+  <button (click)="cambiarSeccion('registro-funcionarios')"
+    [ngClass]="{'bg-blue-200 text-white': seccionActiva === 'registro-funcionarios', 'bg-gray-50': seccionActiva !== 'registro-funcionarios'}"
     class="px-4 py-2 rounded border">
     Registro Funcionarios
-  </button> 
+  </button>
 
-  <button (click)="cambiarSeccion('especialidades')" 
-    [ngClass]="{'bg-blue-200 text-white': seccionActiva === 'especialidades', 'bg-gray-50': seccionActiva !== 'especialidades'}" 
+  <button (click)="cambiarSeccion('especialidades')"
+    [ngClass]="{'bg-blue-200 text-white': seccionActiva === 'especialidades', 'bg-gray-50': seccionActiva !== 'especialidades'}"
     class="px-4 py-2 rounded border">
     Especialidades
   </button>
 
-  <button (click)="cambiarSeccion('pliego-comision')" 
-    [ngClass]="{'bg-blue-200 text-white': seccionActiva === 'pliego-comision', 'bg-gray-50': seccionActiva !== 'pliego-comision'}" 
+  <button (click)="cambiarSeccion('pliego-comision')"
+    [ngClass]="{'bg-blue-200 text-white': seccionActiva === 'pliego-comision', 'bg-gray-50': seccionActiva !== 'pliego-comision'}"
     class="px-4 py-2 rounded border">
     Pliego Comisión
   </button>
 
-  <button (click)="cambiarSeccion('viaticos-pasajes')" 
-    [ngClass]="{'bg-blue-200 text-white': seccionActiva === 'viaticos-pasajes', 'bg-gray-50': seccionActiva !== 'viaticos-pasajes'}" 
+  <button (click)="cambiarSeccion('viaticos-pasajes')"
+    [ngClass]="{'bg-blue-200 text-white': seccionActiva === 'viaticos-pasajes', 'bg-gray-50': seccionActiva !== 'viaticos-pasajes'}"
     class="px-4 py-2 rounded border">
     Viáticos/Pasajes
   </button>-->
 
-  <app-usuarios *ngIf="seccionActiva === 'usuarios'"></app-usuarios>
-<app-vehiculo *ngIf="seccionActiva === 'vehiculos'"></app-vehiculo>
-<!--<app-comprobacion *ngIf="seccionActiva === 'comprobacion'"></app-comprobacion>
-<app-informecomision *ngIf="seccionActiva === 'informecomision'"></app-informecomision>
-<app-registro-funcionarios *ngIf="seccionActiva === 'registro-funcionarios'"></app-registro-funcionarios>
-<app-especialidades *ngIf="seccionActiva === 'especialidades'"></app-especialidades>
-<app-pliego-comision *ngIf="seccionActiva === 'pliego-comision'"></app-pliego-comision>
-<app-viaticos-pasajes *ngIf="seccionActiva === 'viaticos-pasajes'"></app-viaticos-pasajes>-->
+  @if (seccionActiva === 'usuarios') {
+    <app-usuarios></app-usuarios>
+  }
+  @if (seccionActiva === 'vehiculos') {
+    <app-vehiculo></app-vehiculo>
+  }
+  <!--<app-comprobacion *ngIf="seccionActiva === 'comprobacion'"></app-comprobacion>
+  <app-informecomision *ngIf="seccionActiva === 'informecomision'"></app-informecomision>
+  <app-registro-funcionarios *ngIf="seccionActiva === 'registro-funcionarios'"></app-registro-funcionarios>
+  <app-especialidades *ngIf="seccionActiva === 'especialidades'"></app-especialidades>
+  <app-pliego-comision *ngIf="seccionActiva === 'pliego-comision'"></app-pliego-comision>
+  <app-viaticos-pasajes *ngIf="seccionActiva === 'viaticos-pasajes'"></app-viaticos-pasajes>-->
 
-  </div>
+</div>
 
-  <!-- Sección USUARIOS -->
-  <div *ngIf="seccionActiva === 'usuarios'">
+<!-- Sección USUARIOS -->
+@if (seccionActiva === 'usuarios') {
+  <div>
     <div class="mb-4 text-right">
       <button (click)="agregarUsuario()" class="bg-green-600 text-white px-4 py-2 rounded">+ Agregar nuevo usuario</button>
     </div>
-
     <!-- Formulario agregar usuario -->
-    <div *ngIf="mostrarFormularioUsuario" class="mb-6 p-4 border rounded bg-gray-50">
-      <h3 class="text-lg font-semibold mb-3">Registrar nuevo usuario</h3>
-
-      <input type="text" placeholder="Nombre" [(ngModel)]="nuevoUsuario.nombre" class="block mb-2 p-2 border rounded w-full" />
-      <input type="text" placeholder="Matrícula" [(ngModel)]="nuevoUsuario.matricula" class="block mb-2 p-2 border rounded w-full" />
-      <input type="text" placeholder="CURP" [(ngModel)]="nuevoUsuario.curp" class="block mb-2 p-2 border rounded w-full" />
-      <input type="text" placeholder="RFC" [(ngModel)]="nuevoUsuario.rfc" class="block mb-2 p-2 border rounded w-full" />
-      <input type="text" placeholder="Categoría" [(ngModel)]="nuevoUsuario.categoria" class="block mb-2 p-2 border rounded w-full" />
-      <input type="text" placeholder="Password" [(ngModel)]="nuevoUsuario.password" class="block mb-2 p-2 border rounded w-full"/>
-
-      <label class="block mb-2 font-semibold">Asignación</label>
-      <select [(ngModel)]="nuevoUsuario.asignacion" class="block mb-2 p-2 border rounded w-full">
-        <option value="14000">Administrador</option>
-        <option value="9000">Subadministrador</option>
-        <option value="4000">Operador</option>
-        <option value="5000">Administrativo</option>
-      </select>
-
-      <label class="block mb-2 font-semibold">Estatus</label>
-      <select [(ngModel)]="nuevoUsuario.estatus" class="block mb-4 p-2 border rounded w-full">
-        <option value="alta">Alta</option>
-        <option value="baja">Baja</option>
-      </select>
-
-      <button (click)="guardarUsuario()" class="bg-blue-600 text-white px-4 py-2 rounded mr-2">Guardar usuario</button>
-      <button (click)="mostrarFormularioUsuario = false" class="bg-gray-400 px-4 py-2 rounded">Cancelar</button>
-    </div>
-
+    @if (mostrarFormularioUsuario) {
+      <div class="mb-6 p-4 border rounded bg-gray-50">
+        <h3 class="text-lg font-semibold mb-3">Registrar nuevo usuario</h3>
+        <input type="text" placeholder="Nombre" [(ngModel)]="nuevoUsuario.nombre" class="block mb-2 p-2 border rounded w-full" />
+        <input type="text" placeholder="Matrícula" [(ngModel)]="nuevoUsuario.matricula" class="block mb-2 p-2 border rounded w-full" />
+        <input type="text" placeholder="CURP" [(ngModel)]="nuevoUsuario.curp" class="block mb-2 p-2 border rounded w-full" />
+        <input type="text" placeholder="RFC" [(ngModel)]="nuevoUsuario.rfc" class="block mb-2 p-2 border rounded w-full" />
+        <input type="text" placeholder="Categoría" [(ngModel)]="nuevoUsuario.categoria" class="block mb-2 p-2 border rounded w-full" />
+        <input type="text" placeholder="Password" [(ngModel)]="nuevoUsuario.password" class="block mb-2 p-2 border rounded w-full"/>
+        <label class="block mb-2 font-semibold">Asignación</label>
+        <select [(ngModel)]="nuevoUsuario.asignacion" class="block mb-2 p-2 border rounded w-full">
+          <option value="14000">Administrador</option>
+          <option value="9000">Subadministrador</option>
+          <option value="4000">Operador</option>
+          <option value="5000">Administrativo</option>
+        </select>
+        <label class="block mb-2 font-semibold">Estatus</label>
+        <select [(ngModel)]="nuevoUsuario.estatus" class="block mb-4 p-2 border rounded w-full">
+          <option value="alta">Alta</option>
+          <option value="baja">Baja</option>
+        </select>
+        <button (click)="guardarUsuario()" class="bg-blue-600 text-white px-4 py-2 rounded mr-2">Guardar usuario</button>
+        <button (click)="mostrarFormularioUsuario = false" class="bg-gray-400 px-4 py-2 rounded">Cancelar</button>
+      </div>
+    }
     <!-- Formulario editar usuario -->
-    <div *ngIf="editarUsuarioActivo" class="mb-6 p-4 border rounded bg-yellow-50">
-      <h3 class="text-lg font-semibold mb-3">Editar usuario</h3>
-
-      <input type="text" placeholder="Nombre" [(ngModel)]="usuarioSeleccionado!.nombre" class="block mb-2 p-2 border rounded w-full" />
-      <input type="text" placeholder="Matrícula" [(ngModel)]="usuarioSeleccionado!.matricula" class="block mb-2 p-2 border rounded w-full" />
-      <input type="text" placeholder="CURP" [(ngModel)]="usuarioSeleccionado!.curp" class="block mb-2 p-2 border rounded w-full" />
-      <input type="text" placeholder="RFC" [(ngModel)]="usuarioSeleccionado!.rfc" class="block mb-2 p-2 border rounded w-full" />
-      <input type="text" placeholder="Categoría" [(ngModel)]="usuarioSeleccionado!.categoria" class="block mb-2 p-2 border rounded w-full" />
-      <input type="text" placeholder="Password"[(ngModel)]="usuarioSeleccionado!.password" class="block mb-2 p-2 border rounded w-full"/>
-
-      <label class="block mb-2 font-semibold">Asignación</label>
-      <select [(ngModel)]="usuarioSeleccionado!.asignacion" class="block mb-2 p-2 border rounded w-full">
-        <option value="14000">Administrador</option>
-        <option value="9000">Subadministrador</option>
-        <option value="4000">Operador</option>
-        <option value="5000">Administrativo</option>
-      </select>
-
-      <label class="block mb-2 font-semibold">Estatus</label>
-      <select [(ngModel)]="usuarioSeleccionado!.estatus" class="block mb-4 p-2 border rounded w-full">
-        <option value="alta">Alta</option>
-        <option value="baja">Baja</option>
-      </select>
-
-      <button (click)="guardarCambiosUsuario()" class="bg-blue-600 text-white px-4 py-2 rounded mr-2">Guardar cambios</button>
-      <button (click)="editarUsuarioActivo = false; usuarioSeleccionado = null" class="bg-gray-400 px-4 py-2 rounded">Cancelar</button>
-      <button (click)="toggleEstatusUsuario()" class="ml-4 bg-red-600 text-white px-4 py-2 rounded">
-        Cambiar estatus ({{usuarioSeleccionado?.estatus}})
-      </button>
-    </div>
-
+    @if (editarUsuarioActivo) {
+      <div class="mb-6 p-4 border rounded bg-yellow-50">
+        <h3 class="text-lg font-semibold mb-3">Editar usuario</h3>
+        <input type="text" placeholder="Nombre" [(ngModel)]="usuarioSeleccionado!.nombre" class="block mb-2 p-2 border rounded w-full" />
+        <input type="text" placeholder="Matrícula" [(ngModel)]="usuarioSeleccionado!.matricula" class="block mb-2 p-2 border rounded w-full" />
+        <input type="text" placeholder="CURP" [(ngModel)]="usuarioSeleccionado!.curp" class="block mb-2 p-2 border rounded w-full" />
+        <input type="text" placeholder="RFC" [(ngModel)]="usuarioSeleccionado!.rfc" class="block mb-2 p-2 border rounded w-full" />
+        <input type="text" placeholder="Categoría" [(ngModel)]="usuarioSeleccionado!.categoria" class="block mb-2 p-2 border rounded w-full" />
+        <input type="text" placeholder="Password"[(ngModel)]="usuarioSeleccionado!.password" class="block mb-2 p-2 border rounded w-full"/>
+        <label class="block mb-2 font-semibold">Asignación</label>
+        <select [(ngModel)]="usuarioSeleccionado!.asignacion" class="block mb-2 p-2 border rounded w-full">
+          <option value="14000">Administrador</option>
+          <option value="9000">Subadministrador</option>
+          <option value="4000">Operador</option>
+          <option value="5000">Administrativo</option>
+        </select>
+        <label class="block mb-2 font-semibold">Estatus</label>
+        <select [(ngModel)]="usuarioSeleccionado!.estatus" class="block mb-4 p-2 border rounded w-full">
+          <option value="alta">Alta</option>
+          <option value="baja">Baja</option>
+        </select>
+        <button (click)="guardarCambiosUsuario()" class="bg-blue-600 text-white px-4 py-2 rounded mr-2">Guardar cambios</button>
+        <button (click)="editarUsuarioActivo = false; usuarioSeleccionado = null" class="bg-gray-400 px-4 py-2 rounded">Cancelar</button>
+        <button (click)="toggleEstatusUsuario()" class="ml-4 bg-red-600 text-white px-4 py-2 rounded">
+          Cambiar estatus ({{usuarioSeleccionado?.estatus}})
+        </button>
+      </div>
+    }
     <!-- Tabla de usuarios -->
     <table class="w-full border-collapse border border-gray-300">
       <thead>
@@ -142,79 +140,76 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let usuario of usuarios">
-          <td class="border border-gray-300 p-2">{{ usuario.nombre }}</td>
-          <td class="border border-gray-300 p-2">{{ usuario.matricula }}</td>
-          <td class="border border-gray-300 p-2">{{ usuario.categoria }}</td>
-          <td class="border border-gray-300 p-2">
-            {{
+        @for (usuario of usuarios; track usuario) {
+          <tr>
+            <td class="border border-gray-300 p-2">{{ usuario.nombre }}</td>
+            <td class="border border-gray-300 p-2">{{ usuario.matricula }}</td>
+            <td class="border border-gray-300 p-2">{{ usuario.categoria }}</td>
+            <td class="border border-gray-300 p-2">
+              {{
               usuario.asignacion === '14000' ? 'Administrador' :
               usuario.asignacion === '9000' ? 'Subadministrador' :
               usuario.asignacion === '4000' ? 'Operador' :
               usuario.asignacion === '5000' ? 'Administrativo' : 'Desconocido'
-            }}
-          </td>
-          <td class="border border-gray-300 p-2 capitalize">{{ usuario.estatus }}</td>
-          <td class="border border-gray-300 p-2">
-            <button (click)="editarUsuario(usuario)" class="bg-yellow-400 px-2 py-1 rounded mr-2">Editar</button>
-          </td>
-        </tr>
+              }}
+            </td>
+            <td class="border border-gray-300 p-2 capitalize">{{ usuario.estatus }}</td>
+            <td class="border border-gray-300 p-2">
+              <button (click)="editarUsuario(usuario)" class="bg-yellow-400 px-2 py-1 rounded mr-2">Editar</button>
+            </td>
+          </tr>
+        }
       </tbody>
     </table>
   </div>
+}
 
-  <!-- Sección VEHÍCULOS -->
-  <div *ngIf="seccionActiva === 'vehiculos'">
+<!-- Sección VEHÍCULOS -->
+@if (seccionActiva === 'vehiculos') {
+  <div>
     <div class="mb-4 text-right">
       <button (click)="agregarVehiculo()" class="bg-green-600 text-white px-4 py-2 rounded">+ Agregar nuevo vehículo</button>
     </div>
-
     <!-- Formulario agregar vehículo -->
-    <div *ngIf="mostrarFormularioVehiculo" class="mb-6 p-4 border rounded bg-gray-50">
-      <h3 class="text-lg font-semibold mb-3">Registrar nuevo vehículo</h3>
-
-      <input type="text" placeholder="Tipo" [(ngModel)]="nuevoVehiculo.tipo" class="block mb-2 p-2 border rounded w-full" />
-      <input type="text" placeholder="Placas" [(ngModel)]="nuevoVehiculo.placas" class="block mb-2 p-2 border rounded w-full" />
-      <input type="text" placeholder="Modelo" [(ngModel)]="nuevoVehiculo.modelo" class="block mb-2 p-2 border rounded w-full" />
-      <input type="number" placeholder="Kilometraje Actual" [(ngModel)]="nuevoVehiculo.actualKilometraje" class="block mb-2 p-2 border rounded w-full" />
-      <input type="text" placeholder="Próximo Servicio" [(ngModel)]="nuevoVehiculo.proximoServicio" class="block mb-2 p-2 border rounded w-full" />
-
-      <label class="block mb-2 font-semibold">Estatus</label>
-      <select [(ngModel)]="nuevoVehiculo.estatus" class="block mb-2 p-2 border rounded w-full">
-        <option value="alta">Alta</option>
-        <option value="baja">Baja</option>
-        <option value="mantenimiento">Mantenimiento</option>
-      </select>
-
-      <input type="text" placeholder="ECCO" [(ngModel)]="nuevoVehiculo.ecco" class="block mb-4 p-2 border rounded w-full" />
-
-      <button (click)="guardarVehiculo()" class="bg-blue-600 text-white px-4 py-2 rounded mr-2">Guardar vehículo</button>
-      <button (click)="mostrarFormularioVehiculo = false" class="bg-gray-400 px-4 py-2 rounded">Cancelar</button>
-    </div>
-
+    @if (mostrarFormularioVehiculo) {
+      <div class="mb-6 p-4 border rounded bg-gray-50">
+        <h3 class="text-lg font-semibold mb-3">Registrar nuevo vehículo</h3>
+        <input type="text" placeholder="Tipo" [(ngModel)]="nuevoVehiculo.tipo" class="block mb-2 p-2 border rounded w-full" />
+        <input type="text" placeholder="Placas" [(ngModel)]="nuevoVehiculo.placas" class="block mb-2 p-2 border rounded w-full" />
+        <input type="text" placeholder="Modelo" [(ngModel)]="nuevoVehiculo.modelo" class="block mb-2 p-2 border rounded w-full" />
+        <input type="number" placeholder="Kilometraje Actual" [(ngModel)]="nuevoVehiculo.actualKilometraje" class="block mb-2 p-2 border rounded w-full" />
+        <input type="text" placeholder="Próximo Servicio" [(ngModel)]="nuevoVehiculo.proximoServicio" class="block mb-2 p-2 border rounded w-full" />
+        <label class="block mb-2 font-semibold">Estatus</label>
+        <select [(ngModel)]="nuevoVehiculo.estatus" class="block mb-2 p-2 border rounded w-full">
+          <option value="alta">Alta</option>
+          <option value="baja">Baja</option>
+          <option value="mantenimiento">Mantenimiento</option>
+        </select>
+        <input type="text" placeholder="ECCO" [(ngModel)]="nuevoVehiculo.ecco" class="block mb-4 p-2 border rounded w-full" />
+        <button (click)="guardarVehiculo()" class="bg-blue-600 text-white px-4 py-2 rounded mr-2">Guardar vehículo</button>
+        <button (click)="mostrarFormularioVehiculo = false" class="bg-gray-400 px-4 py-2 rounded">Cancelar</button>
+      </div>
+    }
     <!-- Formulario editar vehículo -->
-    <div *ngIf="editarVehiculoActivo" class="mb-6 p-4 border rounded bg-yellow-50">
-      <h3 class="text-lg font-semibold mb-3">Editar vehículo</h3>
-
-      <input type="text" placeholder="Tipo" [(ngModel)]="vehiculoSeleccionado!.tipo" class="block mb-2 p-2 border rounded w-full" />
-      <input type="text" placeholder="Placas" [(ngModel)]="vehiculoSeleccionado!.placas" class="block mb-2 p-2 border rounded w-full" />
-      <input type="text" placeholder="Modelo" [(ngModel)]="vehiculoSeleccionado!.modelo" class="block mb-2 p-2 border rounded w-full" />
-      <input type="number" placeholder="Kilometraje Actual" [(ngModel)]="vehiculoSeleccionado!.actualKilometraje" class="block mb-2 p-2 border rounded w-full" />
-      <input type="text" placeholder="Próximo Servicio" [(ngModel)]="vehiculoSeleccionado!.proximoServicio" class="block mb-2 p-2 border rounded w-full" />
-
-      <label class="block mb-2 font-semibold">Estatus</label>
-      <select [(ngModel)]="vehiculoSeleccionado!.estatus" class="block mb-2 p-2 border rounded w-full">
-        <option value="alta">Alta</option>
-        <option value="baja">Baja</option>
-        <option value="mantenimiento">Mantenimiento</option>
-      </select>
-
-      <input type="text" placeholder="ECCO" [(ngModel)]="vehiculoSeleccionado!.ecco" class="block mb-4 p-2 border rounded w-full" />
-
-      <button (click)="guardarCambiosVehiculo()" class="bg-blue-600 text-white px-4 py-2 rounded mr-2">Guardar cambios</button>
-      <button (click)="editarVehiculoActivo = false; vehiculoSeleccionado = null" class="bg-gray-400 px-4 py-2 rounded">Cancelar</button>
-    </div>
-
+    @if (editarVehiculoActivo) {
+      <div class="mb-6 p-4 border rounded bg-yellow-50">
+        <h3 class="text-lg font-semibold mb-3">Editar vehículo</h3>
+        <input type="text" placeholder="Tipo" [(ngModel)]="vehiculoSeleccionado!.tipo" class="block mb-2 p-2 border rounded w-full" />
+        <input type="text" placeholder="Placas" [(ngModel)]="vehiculoSeleccionado!.placas" class="block mb-2 p-2 border rounded w-full" />
+        <input type="text" placeholder="Modelo" [(ngModel)]="vehiculoSeleccionado!.modelo" class="block mb-2 p-2 border rounded w-full" />
+        <input type="number" placeholder="Kilometraje Actual" [(ngModel)]="vehiculoSeleccionado!.actualKilometraje" class="block mb-2 p-2 border rounded w-full" />
+        <input type="text" placeholder="Próximo Servicio" [(ngModel)]="vehiculoSeleccionado!.proximoServicio" class="block mb-2 p-2 border rounded w-full" />
+        <label class="block mb-2 font-semibold">Estatus</label>
+        <select [(ngModel)]="vehiculoSeleccionado!.estatus" class="block mb-2 p-2 border rounded w-full">
+          <option value="alta">Alta</option>
+          <option value="baja">Baja</option>
+          <option value="mantenimiento">Mantenimiento</option>
+        </select>
+        <input type="text" placeholder="ECCO" [(ngModel)]="vehiculoSeleccionado!.ecco" class="block mb-4 p-2 border rounded w-full" />
+        <button (click)="guardarCambiosVehiculo()" class="bg-blue-600 text-white px-4 py-2 rounded mr-2">Guardar cambios</button>
+        <button (click)="editarVehiculoActivo = false; vehiculoSeleccionado = null" class="bg-gray-400 px-4 py-2 rounded">Cancelar</button>
+      </div>
+    }
     <!-- Tabla de vehículos -->
     <table class="w-full border-collapse border border-gray-300">
       <thead>
@@ -230,19 +225,22 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let vehiculo of vehiculos">
-          <td class="border border-gray-300 p-2">{{ vehiculo.tipo }}</td>
-          <td class="border border-gray-300 p-2">{{ vehiculo.placas }}</td>
-          <td class="border border-gray-300 p-2">{{ vehiculo.modelo }}</td>
-          <td class="border border-gray-300 p-2">{{ vehiculo.actualKilometraje }}</td>
-          <td class="border border-gray-300 p-2">{{ vehiculo.proximoServicio }}</td>
-          <td class="border border-gray-300 p-2 capitalize">{{ vehiculo.estatus }}</td>
-          <td class="border border-gray-300 p-2">{{ vehiculo.ecco }}</td>
-          <td class="border border-gray-300 p-2">
-            <button (click)="editarVehiculo(vehiculo)" class="bg-yellow-400 px-2 py-1 rounded mr-2">Editar</button>
-          </td>
-        </tr>
+        @for (vehiculo of vehiculos; track vehiculo) {
+          <tr>
+            <td class="border border-gray-300 p-2">{{ vehiculo.tipo }}</td>
+            <td class="border border-gray-300 p-2">{{ vehiculo.placas }}</td>
+            <td class="border border-gray-300 p-2">{{ vehiculo.modelo }}</td>
+            <td class="border border-gray-300 p-2">{{ vehiculo.actualKilometraje }}</td>
+            <td class="border border-gray-300 p-2">{{ vehiculo.proximoServicio }}</td>
+            <td class="border border-gray-300 p-2 capitalize">{{ vehiculo.estatus }}</td>
+            <td class="border border-gray-300 p-2">{{ vehiculo.ecco }}</td>
+            <td class="border border-gray-300 p-2">
+              <button (click)="editarVehiculo(vehiculo)" class="bg-yellow-400 px-2 py-1 rounded mr-2">Editar</button>
+            </td>
+          </tr>
+        }
       </tbody>
     </table>
   </div>
+}
 </div>

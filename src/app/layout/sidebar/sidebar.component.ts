@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router'; // ✅ Corrección aquí
-import { CommonModule } from '@angular/common';
+
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../core/auth/auth.service';
 import { UserRole } from '../../core/auth/user.model';
@@ -81,10 +81,9 @@ const LINKS: Record<UserRole, SidebarLink[]> = {
   selector: 'app-sidebar',
   standalone: true,
   imports: [
-    RouterModule, 
-    CommonModule,
+    RouterModule,
     LucideAngularModule
-  ],
+],
   templateUrl: './sidebar.component.html',
   //styleUrls: ['./sidebar.component.css'],
 })

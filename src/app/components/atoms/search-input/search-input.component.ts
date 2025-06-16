@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Input } from '@angular/core';
 import { LucideAngularModule,Search } from 'lucide-angular';
 import { FormsModule } from '@angular/forms'; 
@@ -7,7 +7,7 @@ const icons = Search;
 @Component({
   selector: 'app-search-input',
   standalone: true,
-  imports: [CommonModule,LucideAngularModule,FormsModule],
+  imports: [LucideAngularModule, FormsModule],
   templateUrl: './search-input.component.html',
   styleUrls: ['./search-input.component.css']
 })
